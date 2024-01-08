@@ -1,24 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<script>
-function VerificadordeCorreo() {
- var email = document.getElementById("email").value;
- var patron = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  
- if (patron.test(email)) {
-    document.getElementById("resultado").innerHTML = "Correo válido.";
- } else {
-    document.getElementById("resultado").innerHTML = "correo inválido.";
- }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonato</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-<h2>Verificador de correo</h2>
-<label for="email">Ingrese un correo electrónico:</label><br>
-<input type="text" id="email" name="email"><br>
-<button onclick="VerificadordeCorreo()">Verificar</button>
-<p id="resultado"></p>
+    <div id="resultados"></div>
+    <button id="verCampeon">Ver campeón</button>
+
+    <script>
+        var campeon;
+        var equipos = ["Argentina", "Holanda", "Croacia", "Brasil", "Marruecos", "Portugal", "Francia", "Inglaterra"];
+        var cuartos = ["Argentina - Holanda", "Croacia - Brasil", "Marruecos - Portugal", "Francia - Inglaterra"];
+        var semifinales = ["Argentina - Croacia", "Marruecos - Francia"];
+        var final = ["Argentina - Francia", "El campeón es: Francia"];
+
+        function mostrarResultado() {
+            $("#resultados").html("<h2>Equipos:</h2><ul><li>" + equipos.join("</li><li>") + "</li></ul>");
+            $("#resultados").append("<h2>Cuartos:</h2><ul><li>" + cuartos.join("</li><li>") + "</li></ul>");
+            $("#resultados").append("<h2>Semifinales:</h2><ul><li>" + semifinales.join("</li><li>") + "</li></ul>");
+            $("#resultados").append("<h2>Finales:</h2><ul><li>" + final.join("</li><li>") + "</li></ul>");
+        }
+
+        $("#verCampeon").click(function() {
+            mostrarResultado();
+        });
+    </script>
 </body>
 </html>
