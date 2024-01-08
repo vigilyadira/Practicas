@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function VerificadordeCorreo() {
+ var email = document.getElementById("email").value;
+ var patron = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  
+ if (patron.test(email)) {
+    document.getElementById("resultado").innerHTML = "Correo válido.";
+ } else {
+    document.getElementById("resultado").innerHTML = "correo inválido.";
+ }
+}
+</script>
+</head>
+<body>
+<h2>Verificador de correo</h2>
+<label for="email">Ingrese un correo electrónico:</label><br>
+<input type="text" id="email" name="email"><br>
+<button onclick="VerificadordeCorreo()">Verificar</button>
+<p id="resultado"></p>
+</body>
+</html>
