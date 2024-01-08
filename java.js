@@ -1,22 +1,14 @@
-function preguntarDatos() {
-    var cantidad = 10; // Cantidad de datos
-    var datos = [9.8, 9.8, 9.8, 9.8, 1.1,9.8,9.8,9.8,9.8,9.8]; // INgresar datos
-   
-    var suma = 0;
-    for (var i = 0; i < datos.length; i++) {
-       suma += datos[i];
+ // Ejercicio 982
+
+ function ingresenumero(numero) {
+    return function(v, i, a) {
+        return v > numero;
     }
-   
-    var promedio = suma / datos.length;
-    var mayores = 0;
-   
-    for (var i = 0; i < datos.length; i++) {
-       if (datos[i] > promedio) {
-         mayores++;
-       }
-    }
-   
-    console.log("Cantidad de datos mayores: " + mayores);
-   }
-   
-   preguntarDatos();
+
+ }
+
+ let numeros = [9, 15, 30, 25, 22, 29, 33, 52];
+
+let sonmayores = numeros.filter(ingresenumero(30));
+
+console.log(sonmayores); 
