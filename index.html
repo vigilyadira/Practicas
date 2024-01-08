@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function VerificadordeCorreo() {
- var email = document.getElementById("email").value;
- var patron = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  
- if (patron.test(email)) {
-    document.getElementById("resultado").innerHTML = "Correo válido.";
- } else {
-    document.getElementById("resultado").innerHTML = "correo inválido.";
- }
-}
-</script>
+    <title> Suma y fraccion</title>
+    <style>
+        .resultado {
+            width: 33.33%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-<h2>Verificador de correo</h2>
-<label for="email">Ingrese un correo electrónico:</label><br>
-<input type="text" id="email" name="email"><br>
-<button onclick="VerificadordeCorreo()">Verificar</button>
-<p id="resultado"></p>
+    <h2> Suma y fraccion</h2>
+    <label for="potencia">Ingrese la potencia:</label>
+    <input type="number" id="potencia" name="potencia">
+    <button onclick="calcular()">Calcular</button>
+    <h3>Resultado en suma:</h3>
+    <p id="resultadoSuma"></p>
+    <h3>Resultado en fraccion:</h3>
+    <p id="resultadoFraccion"></p>
+   
+    <script src="java.js"></script>
 </body>
 </html>
+
+
+
+
