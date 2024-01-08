@@ -1,13 +1,14 @@
-function calcular() {
-    let potencia = document.getElementById("potencia").value;
-    let resultadoSuma = 0;
-    let resultadoFraccion = 0;
+ // Ejercicio 982
 
-    for (let i = 1; i <= potencia; i++) {
-        resultadoSuma += i;
-        resultadoFraccion += i / Math.pow(2, i);
+ function ingresenumero(numero) {
+    return function(v, i, a) {
+        return v > numero;
     }
 
-    document.getElementById("resultadoSuma").innerHTML = resultadoSuma;
-    document.getElementById("resultadoFraccion").innerHTML = resultadoFraccion;
-}
+ }
+
+ let numeros = [9, 15, 30, 25, 22, 29, 33, 52];
+
+let sonmayores = numeros.filter(ingresenumero(30));
+
+console.log(sonmayores); 
