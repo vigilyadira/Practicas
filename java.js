@@ -1,22 +1,39 @@
-function preguntarDatos() {
-    var cantidad = 10; // Cantidad de datos
-    var datos = [9.8, 9.8, 9.8, 9.8, 1.1,9.8,9.8,9.8,9.8,9.8]; // INgresar datos
-   
-    var suma = 0;
-    for (var i = 0; i < datos.length; i++) {
-       suma += datos[i];
-    }
-   
-    var promedio = suma / datos.length;
-    var mayores = 0;
-   
-    for (var i = 0; i < datos.length; i++) {
-       if (datos[i] > promedio) {
-         mayores++;
-       }
-    }
-   
-    console.log("Cantidad de datos mayores: " + mayores);
-   }
-   
-   preguntarDatos();
+const equipos = [
+    'argentina',
+    'Holanda',
+    'Croacia',
+    'Brasil',
+    'Marruecos',
+    'Portugal',
+    'Francia',
+    'Inglaterra'
+];
+
+const cuartos = [
+    ['argentina', 'Holanda'],
+    ['Croacia', 'Brasil'],
+    ['Marruecos', 'Portugal'],
+    ['Francia', 'Inglaterra']
+];
+
+const semifinales = [
+    ['argentina', 'Croacia'],
+    ['Marruecos', 'Francia']
+];
+
+const finales = [
+    ['argentina', 'Francia']
+];
+
+function mostrarTabla(titulo, parejas) {
+    console.log(titulo);
+    parejas.forEach((pareja, index) => {
+        console.log(`${index + 1}. ${pareja[0]} - ${pareja[1]}`);
+    });
+    console.log('');
+}
+
+mostrarTabla('Equipos', equipos);
+mostrarTabla('Cuartos', cuartos);
+mostrarTabla('Semifinales', semifinales);
+mostrarTabla('Finales', finales);
